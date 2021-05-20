@@ -17,11 +17,9 @@ export class Page001Service {
   private engine: BABYLON.Engine;
   private scene: BABYLON.Scene;
 
-  private universal_camera: BABYLON.UniversalCamera;
-  private anaglyph_universal_camera: BABYLON.AnaglyphUniversalCamera;
+  private camera: BABYLON.UniversalCamera;
 
-  private hemispheric_light: BABYLON.Light;
-  private directional_light: BABYLON.DirectionalLight;
+  private light: BABYLON.Light;
 
   public constructor(
     private ngZone: NgZone,
@@ -31,43 +29,20 @@ export class Page001Service {
 
   public createScene(canvas: ElementRef<HTMLCanvasElement>): void {
 
-    // CANVAS / ENGINE / SCENE
-
     this.canvas = canvas.nativeElement;
-
-    this.engine = new BABYLON.Engine(this.canvas, true, { stencil: true });
+    this.engine = new BABYLON.Engine(this.canvas, true);
 
     this.scene = new BABYLON.Scene(this.engine);
-    this.scene.clearColor = BABYLON.Color4.FromHexString('#000000');
 
-    // CANERAS
+    this.camera = new BABYLON.UniversalCamera("camera", new BABYLON.Vector3(0, 0, 0), this.scene);
+    this.camera.position = new BABYLON.Vector3(10, 10, 10);
+    this.camera.target = new BABYLON.Vector3(0, 0, 0);
+    this.camera.attachControl(canvas, true);
 
-    this.universal_camera = new BABYLON.UniversalCamera("universal_camera", new BABYLON.Vector3(0, 0, 0), this.scene);
-    this.universal_camera.position = new BABYLON.Vector3(0, 0, 0);
-    this.universal_camera.target = new BABYLON.Vector3(0, 0, 0);
-    this.universal_camera.touchAngularSensibility = 10000;
-    this.universal_camera.speed = 0.7;
-    this.universal_camera.inputs.addMouseWheel();
-    this.universal_camera.attachControl(canvas);
+    this.light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), this.scene);
+    this.light.intensity = 1;
 
-    this.anaglyph_universal_camera = new BABYLON.AnaglyphUniversalCamera("anaglyph_universal_camera", new BABYLON.Vector3(0, 0, 0), 0.05, this.scene);
-    this.anaglyph_universal_camera.touchAngularSensibility = 10000;
-    this.anaglyph_universal_camera.speed = 0.7;
-    this.anaglyph_universal_camera.inputs.addMouseWheel();
-
-    // LIGHTS
-
-    this.hemispheric_light = new BABYLON.HemisphericLight('hemispheric_light', new BABYLON.Vector3(0, 0, 0), this.scene);
-    this.hemispheric_light.intensity = 1;
-
-    this.directional_light = new BABYLON.DirectionalLight("directional_light", new BABYLON.Vector3(0, 0, 0), this.scene);
-    this.directional_light.intensity = 1;
-    this.directional_light.diffuse = new BABYLON.Color3(0.4, 0, 0.2);
-    this.directional_light.specular = new BABYLON.Color3(0, 0, 0);
-
-    // TEST
-
-    BABYLON.SceneLoader.ImportMeshAsync("test", "../../assets/glb/page-001/", "test.glb").then((result) => {
+    BABYLON.SceneLoader.ImportMeshAsync("test", "../../assets/glb/page-001/", "test.glb", this.scene).then((result) => {
     });
 }
 
