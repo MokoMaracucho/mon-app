@@ -1,0 +1,342 @@
+.container-navBar-mini {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .container-navBar-mini {
+    grid-template-columns: [col-start-mini] 60px [col-1-mini] auto [col-2-mini] auto [col-3-mini] auto [col-4-mini] auto [col-5-mini] 1fr [col-6-mini] 40px [col-7-mini] 40px [col-8-mini] 40px [col-9-mini] 40px [col-stop-mini];
+    grid-template-rows: [row-start-mini] 50px [row-stop-mini];
+    background-color: #00000088;
+  }
+
+  .logo-moko-mini {
+    grid-area: row-start-mini / col-start-mini / row-stop-mini / col-1-mini;
+    padding-left: 20px;
+
+  }
+
+  .laboratory-mini {
+    grid-area: row-start-mini / col-1-mini / row-stop-mini / col-2-mini;
+    grid-auto-rows: auto;
+  }
+
+  .laboratory-mini span {
+    margin-left: 10px;
+  }
+
+  .development-mini {
+    grid-area: row-start-mini / col-2-mini / row-stop-mini / col-3-mini;
+    grid-auto-rows: auto;
+  }
+
+  .tutorials-mini {
+    grid-area: row-start-mini / col-3-mini / row-stop-mini / col-4-mini;
+    grid-auto-rows: auto;
+    font-family: Roboto-Regular;
+    font-size: 20px;
+    color: #C1C1C177;
+    opacity: 0.8;
+  }
+
+  .photography-mini {
+    grid-area: row-start-mini / col-4-mini / row-stop-mini / col-5-mini;
+    grid-auto-rows: auto;
+    font-family: Roboto-Regular;
+    font-size: 20px;
+    color: #C1C1C177;
+    opacity: 0.8;
+  }
+
+  .twitter-mini {
+    grid-area: row-start-mini / col-6-mini / row-stop-mini / col-7-mini;
+  }
+
+  .instagram-mini {
+    grid-area: row-start-mini / col-7-mini / row-stop-mini / col-8-mini;
+  }
+
+  .youtube-mini {
+    grid-area: row-start-mini / col-8-mini / row-stop-mini / col-9-mini;
+  }
+
+  .linkedIn-mini {
+    grid-area: row-start-mini / col-9-mini / row-stop-mini / col-stop-mini;
+  }
+}
+
+@media (max-width: 799px) {
+  .container-navBar-mini {
+    grid-template-columns: [col-start-navBar-mini] 50px [col-1-navBar-mini] auto [col-2-navBar-mini] 40px [col-stop-navBar-mini];
+    grid-template-rows: [row-start-navBar-mini] 50px [row-stop-navBar-mini];
+    background-color: #00000088;
+  }
+
+  .logo-moko-mini {
+    grid-area: row-start-navBar-mini / col-start-navBar-mini / row-stop-navBar-mini / col-1-navBar-mini;
+    padding-left: 10px;
+    width: 40px;
+    height: 30px;
+  }
+
+  .menu-mini {
+    grid-area: row-start-navBar-mini / col-2-navBar-mini / row-stop-navBar-mini / col-stop-navBar-mini;
+    margin-right: 20px;
+  }
+
+  .icon-menu-mini {
+    width: 20px;
+    height: 20px;
+  }
+
+  .container-menuNavBar-mini {
+    grid-template-columns: [col-start-menuNavBar-mini] auto [col-1-menuNavBar-mini] 35px [col-2-menuNavBar-mini] 35px [col-3-menuNavBar-mini] 35px [col-4-menuNavBar-mini] 40px [col-stop-menuNavBar-mini];
+    grid-template-rows: [row-start-menuNavBar-mini] 40px [row-1-menuNavBar-mini] 40px [row-2-menuNavBar-mini] 40px [row-3-menuNavBar-mini] 40px [row-4-menuNavBar-mini] 40px [row-stop-menuNavBar-mini];
+    display: grid;
+    align-items: center;
+    z-index: 10;
+    background-color: #000000;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 200px;
+    display: grid;
+    align-items: center;
+  }
+
+  .laboratory-mini {
+    grid-area: row-start-menuNavBar-mini / col-start-menuNavBar-mini / row-1-menuNavBar-mini / col-stop-menuNavBar-mini;
+    grid-auto-rows: auto;
+  }
+
+  .development-mini {
+    grid-area: row-1-menuNavBar-mini / col-start-menuNavBar-mini / row-2-menuNavBar-mini / col-stop-menuNavBar-mini;
+    grid-auto-rows: auto;
+  }
+
+  .tutorials-mini {
+    grid-area: row-2-menuNavBar-mini / col-start-menuNavBar-mini / row-3-menuNavBar-mini / col-stop-menuNavBar-mini;
+    grid-auto-rows: auto;
+  }
+
+  .photography-mini {
+    grid-area: row-3-menuNavBar-mini / col-start-menuNavBar-mini / row-4-menuNavBar-mini / col-stop-menuNavBar-mini;
+    grid-auto-rows: auto;
+  }
+
+  .items_socNet-mini {
+    grid-area: row-4-menuNavBar-mini / col-start-menuNavBar-mini / row-stop-menuNavBar-mini / col-stop-menuNavBar-mini;
+    grid-auto-rows: auto;
+  }
+
+  .twitter-mini {
+    grid-area: row-4-menuNavBar-mini / col-1-menuNavBar-mini / row-stop-menuNavBar-mini / col-2-menuNavBar-mini;
+  }
+
+  .instagram-mini {
+    grid-area: row-4-menuNavBar-mini / col-2-menuNavBar-mini / row-stop-menuNavBar-mini / col-3-menuNavBar-mini;
+  }
+
+  .youtube-mini {
+    grid-area: row-4-menuNavBar-mini / col-3-menuNavBar-mini / row-stop-menuNavBar-mini / col-4-menuNavBar-mini;
+  }
+
+  .linkedIn-mini {
+    grid-area: row-4-menuNavBar-mini / col-4-menuNavBar-mini / row-stop-menuNavBar-mini / col-stop-menuNavBar-mini;
+    margin-right: 20px;
+  }
+}
+
+.container-navBar {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .container-navBar {
+    grid-template-columns: [col-start] 70px [col-1] auto [col-2] auto [col-3] auto [col-4] auto [col-5] 1fr [col-6] 40px [col-7] 40px [col-8] 40px [col-9] 40px [col-stop];
+    grid-template-rows: [row-start] 60px [row-stop];
+    background-color: #00000088;
+  }
+
+  .logo-moko {
+    grid-area: row-start / col-start / row-stop / col-1;
+    padding-left: 20px;
+  }
+
+  .laboratory {
+    grid-area: row-start / col-1 / row-stop / col-2;
+    grid-auto-rows: auto;
+  }
+
+  .laboratory span {
+    margin-left: 10px;
+  }
+
+  .development {
+    grid-area: row-start / col-2 / row-stop / col-3;
+    grid-auto-rows: auto;
+  }
+
+  .tutorials {
+    grid-area: row-start / col-3 / row-stop / col-4;
+    grid-auto-rows: auto;
+    font-family: Roboto-Regular;
+    font-size: 20px;
+    color: #C1C1C177;
+    opacity: 0.8;
+  }
+
+  .photography {
+    grid-area: row-start / col-4 / row-stop / col-5;
+    grid-auto-rows: auto;
+    font-family: Roboto-Regular;
+    font-size: 20px;
+    color: #C1C1C177;
+    opacity: 0.8;
+  }
+
+  .twitter {
+    grid-area: row-start / col-6 / row-stop / col-7;
+  }
+
+  .instagram {
+    grid-area: row-start / col-7 / row-stop / col-8;
+  }
+
+  .youtube {
+    grid-area: row-start / col-8 / row-stop / col-9;
+  }
+
+  .linkedIn {
+    grid-area: row-start / col-9 / row-stop / col-stop;
+  }
+}
+
+@media (max-width: 799px) {
+  .container-navBar {
+    grid-template-columns: [col-start-navBar] 70px [col-1-navBar] auto [col-2-navBar] 40px [col-stop-navBar];
+    grid-template-rows: [row-start-navBar] 60px [row-stop-navBar];
+    background-color: #00000088;
+  }
+
+  .logo-moko {
+    grid-area: row-start-navBar / col-start-navBar / row-stop-navBar / col-1-navBar;
+    padding-left: 10px;
+  }
+
+  .menu {
+    grid-area: row-start-navBar / col-2-navBar / row-stop-navBar / col-stop-navBar;
+    margin-right: 20px;
+  }
+
+  .icon-menu {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 799px) {
+  .container-menuNavBar {
+    grid-template-columns: [col-start-menuNavBar] auto [col-1-menuNavBar] 35px [col-2-menuNavBar] 35px [col-3-menuNavBar] 35px [col-4-menuNavBar] 40px [col-stop-menuNavBar];
+    grid-template-rows: [row-start-menuNavBar] 40px [row-1-menuNavBar] 40px [row-2-menuNavBar] 40px [row-3-menuNavBar] 40px [row-4-menuNavBar] 40px [row-stop-menuNavBar];
+    display: grid;
+    align-items: center;
+    z-index: 10;
+    background-color: #000000;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 200px;
+    display: grid;
+    align-items: center;
+  }
+
+  .laboratory {
+    grid-area: row-start-menuNavBar / col-start-menuNavBar / row-1-menuNavBar / col-stop-menuNavBar;
+    grid-auto-rows: auto;
+  }
+
+  .development {
+    grid-area: row-1-menuNavBar / col-start-menuNavBar / row-2-menuNavBar / col-stop-menuNavBar;
+    grid-auto-rows: auto;
+  }
+
+  .tutorials {
+    grid-area: row-2-menuNavBar / col-start-menuNavBar / row-3-menuNavBar / col-stop-menuNavBar;
+    grid-auto-rows: auto;
+  }
+
+  .photography {
+    grid-area: row-3-menuNavBar / col-start-menuNavBar / row-4-menuNavBar / col-stop-menuNavBar;
+    grid-auto-rows: auto;
+  }
+
+  .items_socNet {
+    grid-area: row-4-menuNavBar / col-start-menuNavBar / row-stop-menuNavBar / col-stop-menuNavBar;
+    grid-auto-rows: auto;
+  }
+
+  .twitter {
+    grid-area: row-4-menuNavBar / col-1-menuNavBar / row-stop-menuNavBar / col-2-menuNavBar;
+  }
+
+  .instagram {
+    grid-area: row-4-menuNavBar / col-2-menuNavBar / row-stop-menuNavBar / col-3-menuNavBar;
+  }
+
+  .youtube {
+    grid-area: row-4-menuNavBar / col-3-menuNavBar / row-stop-menuNavBar / col-4-menuNavBar;
+  }
+
+  .linkedIn {
+    grid-area: row-4-menuNavBar / col-4-menuNavBar / row-stop-menuNavBar / col-stop-menuNavBar;
+    margin-right: 20px;
+  }
+}
+
+.items-navBar {
+  font-family: Roboto-Regular;
+  font-size: 20px;
+  color: #C1C1C177;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.items-navBar-mini {
+  font-family: Roboto-Regular;
+  font-size: 20px;
+  color: #C1C1C177;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a.active span {
+  font-family: Roboto-Bold;
+  color: #017bff;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.socNet-navBar {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.socNet-navBar-mini {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.disable {
+  color: #C1C1C144;
+}

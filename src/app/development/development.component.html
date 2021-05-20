@@ -1,0 +1,2014 @@
+<!-- CANVAS -->
+
+<canvas #rendererCanvas_development id="rendererCanvas_development" touch-action="none"></canvas>
+
+<!-- INTRODUCTION BACKGROUND -->
+
+<div id="div-introduction-background" [style.display]="isOpen_introductionBackground ? 'block' : 'none'" [@fadeOut_backgroundIntroduction]="fadeOut_backgroundIntroduction">
+</div>
+
+<!-- INTRODUCTION !isCV && !isMini -->
+
+<div *ngIf="!isCV && isOpen_introduction && !isMini" class="container-introduction">
+  <img class="logo-introductionDevelopment" src="../assets/img/titles/introduction_development.png" alt="development" [@logoDevelopment_fadeIn]="logoDevelopment_fadeIn">
+
+  <h1 *ngIf="language_english" class="h1-introduction" [@h1Introduction_fadeIn]="h1Introduction_fadeIn"></h1>
+  <h1 *ngIf="language_french" class="h1-introduction" [@h1Introduction_fadeIn]="h1Introduction_fadeIn"></h1>
+  <h1 *ngIf="language_spanish" class="h1-introduction" [@h1Introduction_fadeIn]="h1Introduction_fadeIn"></h1>
+
+  <p *ngIf="language_english" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    The realization of applications calls for many resources, each operating at different levels.
+    <br/>
+    <br/>
+    You will find here the languages, frameworks and software that I use and which, for the most part, were used to create this site.
+  </p>
+  <p *ngIf="language_french" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La réalisation d'applications fait appel à de nombreuses ressources opérant chacune à des niveaux différents.
+    <br/>
+    <br/>
+    Vous trouverez ici les langages, frameworks et logiciels que j'utilise et qui, pour la plupart, ont servi à la réalisation de ce site.
+  </p>
+  <p *ngIf="language_spanish" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La realización de aplicaciones requiere muchos recursos, cada uno operando en diferentes niveles.
+    <br/>
+    <br/>
+    Aquí encontrará los lenguajes, frameworks y software que utilizo y que, en su mayor parte, se utilizaron para crear este sitio.
+  </p>
+
+  <div *ngIf="language_english" class="spans-language" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="span-language badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="span-language badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="span-language badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-enter btn btn-primary mt-3" [disabled]="isLoaded == false" [@btnCloseIntroduction_fadeIn]="btnCloseIntroduction_fadeIn" (click)="close_introduction()">
+    <span *ngIf="language_english">Enter</span>
+    <span *ngIf="language_french">Entrer</span>
+    <span *ngIf="language_spanish">Entrar</span>
+  </button>
+</div>
+
+<!-- INTRODUCTION !isCV && isMini -->
+
+<div *ngIf="!isCV && isOpen_introduction && isMini" class="container-introduction-mini">
+  <img class="logo-introductionDevelopment-mini" src="../assets/img/titles/introduction_development.png" alt="introduction_development" [@logoDevelopment_fadeIn]="logoDevelopment_fadeIn">
+
+  <p *ngIf="language_english" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    The realization of applications calls for many resources, each operating at different levels.
+    <br/>
+    <br/>
+    You will find here the languages, frameworks and software that I use and which, for the most part, were used to create this site.
+  </p>
+  <p *ngIf="language_french" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La réalisation d'applications fait appel à de nombreuses ressources opérant chacune à des niveaux différents.
+    <br/>
+    <br/>
+    Vous trouverez ici les langages, frameworks et logiciels que j'utilise et qui, pour la plupart, ont servi à la réalisation de ce site.
+  </p>
+  <p *ngIf="language_spanish" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La realización de aplicaciones requiere muchos recursos, cada uno operando en diferentes niveles.
+    <br/>
+    <br/>
+    Aquí encontrará los lenguajes, frameworks y software que utilizo y que, en su mayor parte, se utilizaron para crear este sitio.
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-mini" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language-mini badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="span-language-mini badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-mini" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language-mini badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="span-language-mini badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-mini" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language-mini badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="span-language-mini badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-enter-mini btn btn-primary mt-3" [disabled]="isLoaded == false" [@btnCloseIntroduction_fadeIn]="btnCloseIntroduction_fadeIn" (click)="close_introduction()">
+    <span *ngIf="language_english">Enter</span>
+    <span *ngIf="language_french">Entrer</span>
+    <span *ngIf="language_spanish">Entrar</span>
+  </button>
+</div>
+
+<!-- INTRODUCTION isCV && !isMini -->
+
+<div *ngIf="isCV && isOpen_introduction && !isMini" class="container-introduction">
+  <img class="logo-introductionDevelopment" src="../assets/img/titles/introduction_development.png" alt="introduction_development" [@logoDevelopment_fadeIn]="logoDevelopment_fadeIn">
+
+  <h1 *ngIf="language_english" class="h1-introduction" [@h1Introduction_fadeIn]="h1Introduction_fadeIn"></h1>
+  <h1 *ngIf="language_french" class="h1-introduction" [@h1Introduction_fadeIn]="h1Introduction_fadeIn"></h1>
+  <h1 *ngIf="language_spanish" class="h1-introduction" [@h1Introduction_fadeIn]="h1Introduction_fadeIn"></h1>
+
+  <p *ngIf="language_english" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    The realization of applications calls for many resources, each operating at different levels.
+    <br/>
+    <br/>
+    You will find here the languages, frameworks and software that I use and which, for the most part, were used to create this site.
+  </p>
+  <p *ngIf="language_french" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La réalisation d'applications fait appel à de nombreuses ressources opérant chacune à des niveaux différents.
+    <br/>
+    <br/>
+    Vous trouverez ici les langages, frameworks et logiciels que j'utilise et qui, pour la plupart, ont servi à la réalisation de ce site.
+  </p>
+  <p *ngIf="language_spanish" class="text-introduction" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La realización de aplicaciones requiere muchos recursos, cada uno operando en diferentes niveles.
+    <br/>
+    <br/>
+    Aquí encontrará los lenguajes, frameworks y software que utilizo y que, en su mayor parte, se utilizaron para crear este sitio.
+  </p>
+
+  <div *ngIf="language_english" class="spans-language" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="span-language badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="span-language badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="span-language badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-enter btn btn-primary mt-3" [disabled]="isLoaded == false" [@btnCloseIntroduction_fadeIn]="btnCloseIntroduction_fadeIn" (click)="close_introduction()">
+    <span *ngIf="language_english">Enter</span>
+    <span *ngIf="language_french">Entrer</span>
+    <span *ngIf="language_spanish">Entrar</span>
+  </button>
+</div>
+
+<!-- INTRODUCTION !isCV && isMini -->
+
+<div *ngIf="isCV && isOpen_introduction && isMini" class="container-introduction-mini">
+  <img class="logo-introductionDevelopment-mini" src="../assets/img/titles/introduction_development.png" alt="introduction_development" [@logoDevelopment_fadeIn]="logoDevelopment_fadeIn">
+
+  <p *ngIf="language_english" class="text-introduction-mini" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    The realization of applications calls for many resources, each operating at different levels.
+    <br/>
+    <br/>
+    You will find here the languages, frameworks and software that I use and which, for the most part, were used to create this site.
+  </p>
+  <p *ngIf="language_french" class="text-introduction-mini" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La réalisation d'applications fait appel à de nombreuses ressources opérant chacune à des niveaux différents.
+    <br/>
+    <br/>
+    Vous trouverez ici les langages, frameworks et logiciels que j'utilise et qui, pour la plupart, ont servi à la réalisation de ce site.
+  </p>
+  <p *ngIf="language_spanish" class="text-introduction-mini" [@textIntroduction_fadeIn]="textIntroduction_fadeIn">
+    La realización de aplicaciones requiere muchos recursos, cada uno operando en diferentes niveles.
+    <br/>
+    <br/>
+    Aquí encontrará los lenguajes, frameworks y software que utilizo y que, en su mayor parte, se utilizaron para crear este sitio.
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-mini" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language-mini badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="span-language-mini badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-mini" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language-mini badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="span-language-mini badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-mini" [@spanLanguageIntroduction_fadeIn]="spanLanguageIntroduction_fadeIn">
+    <span class="span-language-mini badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="span-language-mini badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-enter-mini btn btn-primary mt-3" [disabled]="isLoaded == false" [@btnCloseIntroduction_fadeIn]="btnCloseIntroduction_fadeIn" (click)="close_introduction()">
+    <span *ngIf="language_english">Enter</span>
+    <span *ngIf="language_french">Entrer</span>
+    <span *ngIf="language_spanish">Entrar</span>
+  </button>
+</div>
+
+<!-- MENU -->
+
+<div class="menu-container">
+  <div class="menu">
+    <img *ngIf="isActive_cameraRegular" class="menu-icon-cameraAnaglyph menu-icons" src="../assets/img/menu/camera_anaglyph.png" alt="camera anaglyph" (click)="switch_cameraAnaglyph()">
+    <img *ngIf="isActive_cameraAnaglyph" class="menu-icon-cameraAnaglyph menu-icons" src="../assets/img/menu/close_camera_anaglyph.png" alt="camera anaglyph" (click)="switch_cameraRegular()">
+  </div>
+</div>
+
+<!-- INIT POSITION -->
+
+<div class="initPosition-container">
+  <img class="icon-initPosition" src="../assets/img/menu/init_position_50x50.png" alt="init position" (click)="init_position()">
+</div>
+
+<!-- POSTGRESQL && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_postgresql ? 'block' : 'none'" [@postgresql_fadeIn]="postgresql_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_postgresql.png" alt="postgresql">
+
+  <p class="texts-card" *ngIf="language_english">
+    PostgreSQL is an object and relational database management system that over the years has gained a strong reputation for reliability.<br/>
+    It uses SQL language in order to manage the data contained in the system or for the processing of flows.<br/>
+    It is particularly useful for processing structured data, that is, data incorporating relationships between entities and variables.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.postgresql.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    PostgreSQL est un système de gestion de base-de-données relationnelle et objet qui au cours des années a acquis une forte réputation de fiabilité.<br/>
+    Il utilise le langgage SQL afin de gérer les données contenues dans le système ou pour le traitement de flux.<br/>
+    Il est particulièrement utile pour traiter des données structurées, c'est-à-dire des données incorporant des relations entre entités et variables.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.postgresql.org/', '_blank'); return false;">Site officiel</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    PostgreSQL es un sistema de gestión de base de datos relacional y objeto que con los años ha ganado una sólida reputación de fiabilidad.<br/>
+    Se utiliza el lenguaje SQL para la gestión de los datos contenidos en el sistema o para el procesamiento de los flujos.<br/>
+    Es particularmente útil para procesar datos estructurados, es decir datos que comprenda las relaciones entre las entidades y variables.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.postgresql.org/', '_blank'); return false;">Sitio web oficial</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_postgresql(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- POSTGRESQL isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_postgresql ? 'block' : 'none'" [@postgresql_fadeIn]="postgresql_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_postgresql.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_postgresql(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      PostgreSQL is an object and relational database management system that over the years has gained a strong reputation for reliability.<br/>
+      It uses SQL language in order to manage the data contained in the system or for the processing of flows.<br/>
+      It is particularly useful for processing structured data, that is, data incorporating relationships between entities and variables.
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      PostgreSQL est un système de gestion de base-de-données relationnelle et objet qui au cours des années a acquis une forte réputation de fiabilité.<br/>
+      Il utilise le langgage SQL afin de gérer les données contenues dans le système ou pour le traitement de flux.<br/>
+      Il est particulièrement utile pour traiter des données structurées, c'est-à-dire des données incorporant des relations entre entités et variables.
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      PostgreSQL es un sistema de gestión de base de datos relacional y objeto que con los años ha ganado una sólida reputación de fiabilidad.<br/>
+      Se utiliza el lenguaje SQL para la gestión de los datos contenidos en el sistema o para el procesamiento de los flujos.<br/>
+      Es particularmente útil para procesar datos estructurados, es decir datos que comprenda las relaciones entre las entidades y variables.
+    </p>
+  </div>
+</div>
+
+<!-- MAVEN && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_maven ? 'block' : 'none'" [@maven_fadeIn]="maven_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_maven.png" alt="maven">
+
+  <p class="texts-card" *ngIf="language_english">
+    Managed by the Apache Software Foundation, Maven is a tool for automating the management of Java projects.
+    It offers many features such as: compilation and deployment of applications, management of libraries, execution of unit tests, generation of documentation and integration into various IDEs.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://maven.apache.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Géré par l'organisation Apache Software Foundation, Maven est un outil permettant d'automatiser la gestion de projets Java.
+    Il offre de nombreuses fonctionnalités tel que : la compilation et le déploiement d'applications, la gestion des librairies, l'exécution des tests unitaires, la génération de documentation et l'intégration dans différents IDE.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://maven.apache.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Gestionado por Apache Software Foundation, Maven es una herramienta para automatizar la gestión de proyectos Java.
+    Ofrece muchas funcionalidades como: compilación y despliegue de aplicaciones, gestión de bibliotecas, ejecución de pruebas unitarias, generación de documentación e integración en varios IDE.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://maven.apache.org/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_maven(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- MAVEN isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_maven ? 'block' : 'none'" [@maven_fadeIn]="maven_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_maven.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_maven(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">  <p class="texts-card" *ngIf="language_english">
+      Managed by the Apache Software Foundation, Maven is a tool for automating the management of Java projects.
+      It offers many features such as: compilation and deployment of applications, management of libraries, execution of unit tests, generation of documentation and integration into various IDEs.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://maven.apache.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Géré par l'organisation Apache Software Foundation, Maven est un outil permettant d'automatiser la gestion de projets Java.
+      Il offre de nombreuses fonctionnalités tel que : la compilation et le déploiement d'applications, la gestion des librairies, l'exécution des tests unitaires, la génération de documentation et l'intégration dans différents IDE.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://maven.apache.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Gestionado por Apache Software Foundation, Maven es una herramienta para automatizar la gestión de proyectos Java.
+      Ofrece muchas funcionalidades como: compilación y despliegue de aplicaciones, gestión de bibliotecas, ejecución de pruebas unitarias, generación de documentación e integración en varios IDE.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://maven.apache.org/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- SPRING FRAMEWORK && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_springFramework ? 'block' : 'none'" [@springFramework_fadeIn]="springFramework_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_springFramework.png" alt="springFramework">
+
+  <p class="texts-card" *ngIf="language_english">
+    Spring is an open-source framework for building and defining the infrastructure of a Java application, which it facilitates development and testing.
+    It is a so-called "lightweight" container, relying mainly on the integration of three key concepts: inversion of control, aspect-oriented programming and the abstration layer.
+    In addition to the basic functionality that can be used by any Java application, extensions have also been implemented to create web applications.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://spring.io/projects/spring-framework', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Spring est un framework open-source pour construire et définir l'infrastructure d'une application Java dont il facilite le développement et les tests.
+    C'est un conteneur dit "léger", s'appuyant principalement sur l'intégration de trois concepts clés : l'inversion de contrôle, la programmation orientée aspect et la couche d'abstration.
+    En plus des fonctionnalités de base pouvant être utilisées par n'importe quelle application Java, des extensions ont également étaient mises en place pour créer des applications Web.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://spring.io/projects/spring-framework', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Spring es un marco de código abierto para construir y definir la infraestructura de una aplicación Java, que facilita el desarrollo y las pruebas.
+    Es un contenedor llamado "ligero", que se basa principalmente en la integración de tres conceptos clave: inversión de control, programación orientada a aspectos y la capa de abstracción.
+    Además de la funcionalidad básica que puede utilizar cualquier aplicación Java, también se han implementado extensiones para crear aplicaciones web.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://spring.io/projects/spring-framework', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_springFramework(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- SPRING FRAMEWORK isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_springFramework ? 'block' : 'none'" [@springFramework_fadeIn]="springFramework_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_springFramework.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_springFramework(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Spring is an open-source framework for building and defining the infrastructure of a Java application, which it facilitates development and testing.
+      It is a so-called "lightweight" container, relying mainly on the integration of three key concepts: inversion of control, aspect-oriented programming and the abstration layer.
+      In addition to the basic functionality that can be used by any Java application, extensions have also been implemented to create web applications.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://spring.io/projects/spring-framework', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Spring est un framework open-source pour construire et définir l'infrastructure d'une application Java dont il facilite le développement et les tests.
+      C'est un conteneur dit "léger", s'appuyant principalement sur l'intégration de trois concepts clés : l'inversion de contrôle, la programmation orientée aspect et la couche d'abstration.
+      En plus des fonctionnalités de base pouvant être utilisées par n'importe quelle application Java, des extensions ont également étaient mises en place pour créer des applications Web.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://spring.io/projects/spring-framework', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Spring es un marco de código abierto para construir y definir la infraestructura de una aplicación Java, que facilita el desarrollo y las pruebas.
+      Es un contenedor llamado "ligero", que se basa principalmente en la integración de tres conceptos clave: inversión de control, programación orientada a aspectos y la capa de abstracción.
+      Además de la funcionalidad básica que puede utilizar cualquier aplicación Java, también se han implementado extensiones para crear aplicaciones web.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://spring.io/projects/spring-framework', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- JAVA && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_java ? 'block' : 'none'" [@java_fadeIn]="java_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_java.png" alt="java">
+
+  <p class="texts-card" *ngIf="language_english">
+    Leader for more than a decade, Java makes it possible to do everything in computing.<br/>
+    From creating desktop applications with the Swing API or JavaFX, to developing complete web applications (Internet or Intranet) with the Java specification, which make the language very popular in companies, Java is also an ideal language for the development of mobile applications for Androïd.
+    When it comes to cloud computing, major service providers such as Amazon, Google and Microsoft all support this programming language for application development.
+    Java Card provides an operating system for smart cards.
+    Finally, Java is also widely used for the Internet of Things (Iot) which is set to experience exponential growth in the coming years with the deployment of 5G.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://go.java/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Leader depuis plus d'une décennie, Java permet de tout faire en informatique.<br/>
+    De la création d'applications de bureau avec l'API Swing ou JavaFX, au développement d'applications web complètes (Internet ou Intranet) avec la spécification Java, qui rendent le langage très populaire dans les entreprises, Java est également un langage idéal pour le développement d'applications mobiles pour Androïd.
+    Concernant le cloud computing, les principaux fournisseurs de services tels que Amazon, Google et Microsoft prennent tous en charge ce langage de programmation pour le développement d'applications.
+    Java Card fournit quant à lui un système d'exploitation pour carte à puce.
+    Enfin, Java est aussi largement utilisé pour l'Internet des objets (Iot) qui est appelé à connaître une croissance exponentielle ces prochaines années avec le déploiment de la 5G.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://go.java/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Líder durante más de una década, Java hace posible hacer todo en informática. <br/>
+    Desde la creación de aplicaciones de escritorio con la API Swing o JavaFX, hasta el desarrollo de aplicaciones web completas (Internet o Intranet) con la especificación Java, que hacen que el lenguaje sea muy popular en las empresas, Java también es un lenguaje ideal para el desarrollo de aplicaciones móviles para Androide.
+    Cuando se trata de computación en la nube, los principales proveedores de servicios como Amazon, Google y Microsoft admiten este lenguaje de programación para el desarrollo de aplicaciones.
+    Java Card proporciona un sistema operativo para tarjetas inteligentes.
+    Finalmente, Java también se usa ampliamente para Internet de las Cosas (Iot), que experimentará un crecimiento exponencial en los próximos años con el despliegue de 5G.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://go.java/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_java(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- JAVA isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_java ? 'block' : 'none'" [@java_fadeIn]="java_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_java.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_java(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Leader for more than a decade, Java makes it possible to do everything in computing.<br/>
+      From creating desktop applications with the Swing API or JavaFX, to developing complete web applications (Internet or Intranet) with the Java specification, which make the language very popular in companies, Java is also an ideal language for the development of mobile applications for Androïd.
+      When it comes to cloud computing, major service providers such as Amazon, Google and Microsoft all support this programming language for application development.
+      Java Card provides an operating system for smart cards.
+      Finally, Java is also widely used for the Internet of Things (Iot) which is set to experience exponential growth in the coming years with the deployment of 5G.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://go.java/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Leader depuis plus d'une décennie, Java permet de tout faire en informatique.<br/>
+      De la création d'applications de bureau avec l'API Swing ou JavaFX, au développement d'applications web complètes (Internet ou Intranet) avec la spécification Java, qui rendent le langage très populaire dans les entreprises, Java est également un langage idéal pour le développement d'applications mobiles pour Androïd.
+      Concernant le cloud computing, les principaux fournisseurs de services tels que Amazon, Google et Microsoft prennent tous en charge ce langage de programmation pour le développement d'applications.
+      Java Card fournit quant à lui un système d'exploitation pour carte à puce.
+      Enfin, Java est aussi largement utilisé pour l'Internet des objets (Iot) qui est appelé à connaître une croissance exponentielle ces prochaines années avec le déploiment de la 5G.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://go.java/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Líder durante más de una década, Java hace posible hacer todo en informática. <br/>
+      Desde la creación de aplicaciones de escritorio con la API Swing o JavaFX, hasta el desarrollo de aplicaciones web completas (Internet o Intranet) con la especificación Java, que hacen que el lenguaje sea muy popular en las empresas, Java también es un lenguaje ideal para el desarrollo de aplicaciones móviles para Androide.
+      Cuando se trata de computación en la nube, los principales proveedores de servicios como Amazon, Google y Microsoft admiten este lenguaje de programación para el desarrollo de aplicaciones.
+      Java Card proporciona un sistema operativo para tarjetas inteligentes.
+      Finalmente, Java también se usa ampliamente para Internet de las Cosas (Iot), que experimentará un crecimiento exponencial en los próximos años con el despliegue de 5G.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://go.java/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- UBUNTU && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_ubuntu ? 'block' : 'none'" [@ubuntu_fadeIn]="ubuntu_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_ubuntu.png" alt="title_ubuntu">
+
+  <p class="texts-card" *ngIf="language_english">
+    Ubuntu is a GNU/Linux operating system based on the Debian Linux distribution.
+    The most viewed distribution on the Internet, Ubuntu is the most widely used operating system on cloud systems as well as for computer servers.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://ubuntu.com/download/server', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Ubuntu est un système d’exploitation GNU/Linux basé sur la distribution Linux Debian.
+    Distribution la plus consultée sur Internet, Ubuntu est le système d'exploitation le plus utilisé sur les systèmes Cloud ainsi que pour les serveurs informatiques.
+    <br/>
+    <a class="links" onclick="window.open('https://ubuntu.com/download/server', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Ubuntu es un sistema operativo GNU / Linux basado en la distribución Debian Linux.
+    Ubuntu, la distribución más vista en Internet, es el sistema operativo más utilizado en sistemas en el Cloud y en servidores informáticos.
+    <br/>
+    <a class="links" onclick="window.open('https://ubuntu.com/download/server', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_ubuntu(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- UBUNTU isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_ubuntu ? 'block' : 'none'" [@ubuntu_fadeIn]="ubuntu_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_ubuntu.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_ubuntu(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Ubuntu is a GNU/Linux operating system based on the Debian Linux distribution.
+      The most viewed distribution on the Internet, Ubuntu is the most widely used operating system on cloud systems as well as for computer servers.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://ubuntu.com/download/server', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Ubuntu est un système d’exploitation GNU/Linux basé sur la distribution Linux Debian.
+      Distribution la plus consultée sur Internet, Ubuntu est le système d'exploitation le plus utilisé sur les systèmes Cloud ainsi que pour les serveurs informatiques.
+      <br/>
+      <a class="links" onclick="window.open('https://ubuntu.com/download/server', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Ubuntu es un sistema operativo GNU / Linux basado en la distribución Debian Linux.
+      Ubuntu, la distribución más vista en Internet, es el sistema operativo más utilizado en sistemas en el Cloud y en servidores informáticos.
+      <br/>
+      <a class="links" onclick="window.open('https://ubuntu.com/download/server', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- PYTHON && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_python ? 'block' : 'none'" [@python_fadeIn]="python_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_python.png" alt="python">
+
+  <p class="texts-card" *ngIf="language_english">
+    Python is an interpreted, cross-paradigm, cross-platform programming language. It promotes structured, functional and object-oriented inperative programming.<br/>
+    <br/>
+    <br/>
+    It works on most computer platforms, from smartphones to mainframe computers, from Windows to Unix with in particular GNU / Linux via macOS, or even Android, iOS, and can also be translated into Java or .NET. It is designed to optimize the productivity of programmers by offering high-level tools and an easy-to-use syntax.<br/>
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.python.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Python est un langage de programmation interprété, multi-paradigme et multi-plateformes. Il favorise la programmation inpérative structurée, fonctionelle et orientée objet.<br/>
+    <br/>
+    <br/>
+    Il fonctionne sur la plupart des plates-formes informatiques, des smartphones aux ordinateurs centraux, de Windows à Unix avec notamment GNU/Linux en passant par macOS, ou encore Android, iOS, et peut aussi être traduit en Java ou .NET. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de haut niveau et une syntaxe simple à utiliser.<br/>
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.python.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Python es un lenguaje de programación multiplataforma, multiplataforma e interpretado. Promueve la programación operativa estructurada, funcional y orientada a objetos. <br/>
+    <br/>
+    <br/>
+    Funciona en la mayoría de las plataformas informáticas, desde teléfonos inteligentes hasta computadoras mainframe, desde Windows a Unix, en particular GNU / Linux a través de macOS, o incluso Android, iOS, y también se puede traducir a Java o .NET. Está diseñado para optimizar la productividad de los programadores al ofrecer herramientas de alto nivel y una sintaxis fácil de usar. <br/>
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.python.org/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_python(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- Python isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_python ? 'block' : 'none'" [@python_fadeIn]="python_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_python.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_python(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Python is an interpreted, cross-paradigm, cross-platform programming language. It promotes structured, functional and object-oriented inperative programming.<br/>
+      <br/>
+      <br/>
+      It works on most computer platforms, from smartphones to mainframe computers, from Windows to Unix with in particular GNU / Linux via macOS, or even Android, iOS, and can also be translated into Java or .NET. It is designed to optimize the productivity of programmers by offering high-level tools and an easy-to-use syntax.<br/>
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.python.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p class="texts-card" *ngIf="language_french">
+      Python est un langage de programmation interprété, multi-paradigme et multi-plateformes. Il favorise la programmation inpérative structurée, fonctionelle et orientée objet.<br/>
+      <br/>
+      <br/>
+      Il fonctionne sur la plupart des plates-formes informatiques, des smartphones aux ordinateurs centraux, de Windows à Unix avec notamment GNU/Linux en passant par macOS, ou encore Android, iOS, et peut aussi être traduit en Java ou .NET. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de haut niveau et une syntaxe simple à utiliser.<br/>
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.python.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p class="texts-card" *ngIf="language_spanish">
+      Python es un lenguaje de programación multiplataforma, multiplataforma e interpretado. Promueve la programación operativa estructurada, funcional y orientada a objetos. <br/>
+      <br/>
+      <br/>
+      Funciona en la mayoría de las plataformas informáticas, desde teléfonos inteligentes hasta computadoras mainframe, desde Windows a Unix, en particular GNU / Linux a través de macOS, o incluso Android, iOS, y también se puede traducir a Java o .NET. Está diseñado para optimizar la productividad de los programadores al ofrecer herramientas de alto nivel y una sintaxis fácil de usar. <br/>
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.python.org/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- CSS && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_css ? 'block' : 'none'" [@css_fadeIn]="css_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_css.png" alt="css">
+
+  <p class="texts-card" *ngIf="language_english">
+    CSS is used to describe the presentation and style of the HTML document.
+    Thanks to its "transform" property, CSS now allows you to model and animate complex objects in 3 dimensions.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    CSS sert à décrire la présentation et le style du document HTML.
+    Grâce à sa propriété "transform", CSS permet aujourd'hui de modéliser et d'animer des objets complexes en 3 dimensions.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    CSS se utiliza para describir la presentación y el estilo del documento HTML.
+    Gracias a su propiedad "transform", CSS ahora le permite modelar y animar objetos complejos en 3 dimensiones.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_css(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- CSS isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_css ? 'block' : 'none'" [@css_fadeIn]="css_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_css.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_css(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      CSS is used to describe the presentation and style of the HTML document.
+      Thanks to its "transform" property, CSS now allows you to model and animate complex objects in 3 dimensions.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      CSS sert à décrire la présentation et le style du document HTML.
+      Grâce à sa propriété "transform", CSS permet aujourd'hui de modéliser et d'animer des objets complexes en 3 dimensions.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      CSS se utiliza para describir la presentación y el estilo del documento HTML.
+      Gracias a su propiedad "transform", CSS ahora le permite modelar y animar objetos complejos en 3 dimensiones.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- HTML && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_html ? 'block' : 'none'" [@html_fadeIn]="html_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_html.png" alt="html">
+
+  <p class="texts-card" *ngIf="language_english">
+    HTML, a language at the heart of the evolution of the Web, is used to write hypertext links, structure the content of a page (texts, images, links, etc.),
+    format the content, create forms, include services multimedia and allows interoperability with a wide variety of equipment.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    HTML, langage au coeur de l'évolution du Web, sert à écrire des liens hypertextes, structurer le contenu d'une page (textes, images, lien...),
+    mettre en forme le contenu, créer des formulaires, inclure des services multimedias et permet l'interoperabilité avec des équipements très variés.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    HTML, un lenguaje en el corazón de la evolución de la Web, se utiliza para escribir enlaces de hipertexto, estructurar el contenido de una página (textos, imágenes, enlaces, etc.),
+    formatear el contenido, crear formularios, incluir servicios multimedia y permite interoperabilidad con una amplia variedad de equipos.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_html(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- HTML isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_html ? 'block' : 'none'" [@html_fadeIn]="html_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_html.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_html(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      HTML, a language at the heart of the evolution of the Web, is used to write hypertext links, structure the content of a page (texts, images, links, etc.),
+      format the content, create forms, include services multimedia and allows interoperability with a wide variety of equipment.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      HTML, langage au coeur de l'évolution du Web, sert à écrire des liens hypertextes, structurer le contenu d'une page (textes, images, lien...),
+      mettre en forme le contenu, créer des formulaires, inclure des services multimedias et permet l'interoperabilité avec des équipements très variés.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      HTML, un lenguaje en el corazón de la evolución de la Web, se utiliza para escribir enlaces de hipertexto, estructurar el contenido de una página (textos, imágenes, enlaces, etc.),
+      formatear el contenido, crear formularios, incluir servicios multimedia y permite interoperabilidad con una amplia variedad de equipos.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- BOOTSTRAP && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_bootstrap ? 'block' : 'none'" [@bootstrap_fadeIn]="bootstrap_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_bootstrap.png" alt="bootstrap">
+
+  <p class="texts-card" *ngIf="language_english">
+    Bootstrap is an open-source framework developed by Twitter. Designed to develop responsive sites, it allows the page and its content to be adapted to all types of screens.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://getbootstrap.com/', '_blank'); return false;">Official website</a>
+    <br/>
+    <br/>
+    Still very widely used, it is important to understand its use. However, the appearance of CSS "grids" now allows a much flexible layout.
+    <br/>
+    <br/>
+    <iframe class="videos" src="https://www.youtube.com/embed/77hwpuVHGps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Bootstrap est un framework open-source développé par Twitter. Pensé pour développer des sites responsives, il permet une adaption de la page et de son contenu à tous types d'écrans.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://getbootstrap.com/', '_blank'); return false;">Official website</a>
+    <br/>
+    <br/>
+    Encore très largement utilisé, il est important de comprendre son utilisation. Toutefois, l'apparition des "grilles" CSS permet aujourd´hui une mise-en-page beaucoup souple.
+    <br/>
+    <br/>
+    <iframe class="videos" src="https://www.youtube.com/embed/77hwpuVHGps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Bootstrap es un marco de código abierto desarrollado por Twitter. Diseñado para desarrollar sitios responsive, permite que la página y su contenido se adapten a todo tipo de pantallas.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://getbootstrap.com/', '_blank'); return false;">Official website</a>
+    <br/>
+    <br/>
+    Aún muy utilizado, es importante comprender su uso. Sin embargo, la aparición de "cuadrículas" CSS ahora permite un diseño mucho más flexible.
+    <br/>
+    <br/>
+    <iframe class="videos" src="https://www.youtube.com/embed/77hwpuVHGps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_bootstrap(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- BOOTSTRAP isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_bootstrap ? 'block' : 'none'" [@bootstrap_fadeIn]="bootstrap_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_bootstrap.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_bootstrap(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Bootstrap is an open-source framework developed by Twitter. Designed to develop responsive sites, it allows the page and its content to be adapted to all types of screens.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://getbootstrap.com/', '_blank'); return false;">Official website</a>
+      <br/>
+      <br/>
+      <iframe class="videos" src="https://www.youtube.com/embed/77hwpuVHGps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Bootstrap est un framework open-source développé par Twitter. Pensé pour développer des sites responsives, il permet une adaption de la page et de son contenu à tous types d'écrans.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://getbootstrap.com/', '_blank'); return false;">Official website</a>
+      <br/>
+      <br/>
+      <iframe class="videos" src="https://www.youtube.com/embed/77hwpuVHGps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Bootstrap es un marco de código abierto desarrollado por Twitter. Diseñado para desarrollar sitios responsive, permite que la página y su contenido se adapten a todo tipo de pantallas.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://getbootstrap.com/', '_blank'); return false;">Official website</a>
+      <br/>
+      <br/>
+      <iframe class="videos" src="https://www.youtube.com/embed/77hwpuVHGps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+  </div>
+</div>
+
+<!-- ANGULAR && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_angular ? 'block' : 'none'" [@angular_fadeIn]="angular_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_angular.png" alt="angular">
+
+  <p class="texts-card" *ngIf="language_english">
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://angular.io/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://angular.io/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://angular.io/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_angular(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- ANGULAR isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_angular ? 'block' : 'none'" [@angular_fadeIn]="angular_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_angular.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_angular(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://angular.io/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://angular.io/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://angular.io/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- TYPESCRIPT && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_typescript ? 'block' : 'none'" [@typescript_fadeIn]="typescript_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_typescript.png" alt="typescript">
+
+  <p class="texts-card" *ngIf="language_english">
+    TypeScript is a free and open source programming language developed by Microsoft that aims to improve and secure the production of JavaScript code.
+    TypeScript code is transcompiled into JavaScript, so it can be interpreted by any web browser or JavaScript engine. Lamguage on which Angular is based.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.typescriptlang.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    TypeScript est un langage de programmation libre et open source développé par Microsoft qui a pour but d'améliorer et de sécuriser la production de code JavaScript.
+    Le code TypeScript est transcompilé en JavaScript, et peut ainsi être interprété par n'importe quel navigateur web ou moteur JavaScript. Lamguage sur lequel repose Angular.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.typescriptlang.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    TypeScript es un lenguaje de programación de código abierto y gratuito desarrollado por Microsoft que tiene como objetivo mejorar y asegurar la producción de código JavaScript.
+    El código TypeScript se transcompila en JavaScript, por lo que puede ser interpretado por cualquier navegador web o motor JavaScript. Idioma en el que se basa Angular.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.typescriptlang.org/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_typescript(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- TYPESCRIPT isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_typescript ? 'block' : 'none'" [@typescript_fadeIn]="typescript_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_typescript.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_typescript(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      TypeScript is a free and open source programming language developed by Microsoft that aims to improve and secure the production of JavaScript code.
+      TypeScript code is transcompiled into JavaScript, so it can be interpreted by any web browser or JavaScript engine. Lamguage on which Angular is based.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.typescriptlang.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      TypeScript est un langage de programmation libre et open source développé par Microsoft qui a pour but d'améliorer et de sécuriser la production de code JavaScript.
+      Le code TypeScript est transcompilé en JavaScript, et peut ainsi être interprété par n'importe quel navigateur web ou moteur JavaScript. Lamguage sur lequel repose Angular.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.typescriptlang.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      TypeScript es un lenguaje de programación de código abierto y gratuito desarrollado por Microsoft que tiene como objetivo mejorar y asegurar la producción de código JavaScript.
+      El código TypeScript se transcompila en JavaScript, por lo que puede ser interpretado por cualquier navegador web o motor JavaScript. Idioma en el que se basa Angular.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.typescriptlang.org/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- POSTMAN && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_postman ? 'block' : 'none'" [@postman_fadeIn]="postman_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_postman.png" alt="postman">
+
+  <p class="texts-card" *ngIf="language_english">
+    Postman is a collaboration platform for API development. Postman allows you to build and execute HTTP requests, to store and organize them in "collections" and group them in a functional way.
+    Postman also allows the management of "environments". This allows variables to be contextualized and to execute queries or series of queries in different configurations.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.postman.com/api-platform/?utm_source=www&utm_medium=home_hero&utm_campaign=button', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Postman est une plateforme de collaboration pour le développement d'API. Postman permet de construire et d’exécuter des requêtes HTTP, de les stocker et de les organiser en "collections" et les regrouper de façon fonctionnelle.
+    Postman permet également la gestion des "environnements". Ce qui permet de contextualiser des variables et d'éxécuter des requêtes ou des séries de requêtes dans différentes configurations.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.postman.com/api-platform/?utm_source=www&utm_medium=home_hero&utm_campaign=button', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Postman es una plataforma de colaboración para el desarrollo de API. Postman permite crear y ejecutar solicitudes HTTP, almacenarlas y organizarlas en "colecciones" y agruparlas de forma funcional.
+    Postman también permite la gestión de "entornos". Esto permite contextualizar variables y ejecutar consultas o series de consultas en diferentes configuraciones.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.postman.com/api-platform/?utm_source=www&utm_medium=home_hero&utm_campaign=button', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_postman(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- POSTMAN isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_postman ? 'block' : 'none'" [@postman_fadeIn]="postman_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_postman.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_postman(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Postman is a collaboration platform for API development. Postman allows you to build and execute HTTP requests, to store and organize them in "collections" and group them in a functional way.
+      Postman also allows the management of "environments". This allows variables to be contextualized and to execute queries or series of queries in different configurations.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.postman.com/api-platform/?utm_source=www&utm_medium=home_hero&utm_campaign=button', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Postman est une plateforme de collaboration pour le développement d'API. Postman permet de construire et d’exécuter des requêtes HTTP, de les stocker et de les organiser en "collections" et les regrouper de façon fonctionnelle.
+      Postman permet également la gestion des "environnements". Ce qui permet de contextualiser des variables et d'éxécuter des requêtes ou des séries de requêtes dans différentes configurations.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.postman.com/api-platform/?utm_source=www&utm_medium=home_hero&utm_campaign=button', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Postman es una plataforma de colaboración para el desarrollo de API. Postman permite crear y ejecutar solicitudes HTTP, almacenarlas y organizarlas en "colecciones" y agruparlas de forma funcional.
+      Postman también permite la gestión de "entornos". Esto permite contextualizar variables y ejecutar consultas o series de consultas en diferentes configuraciones.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.postman.com/api-platform/?utm_source=www&utm_medium=home_hero&utm_campaign=button', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- DOCKER && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_docker ? 'block' : 'none'" [@docker_fadeIn]="docker_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_docker.png" alt="docker">
+
+  <p class="texts-card" *ngIf="language_english">
+    Docker is free software for launching applications in software containers that rely on certain features of the host machine.
+    This increases the flexibility and portability of running an application, which will be able to run reliably and predictably on a wide variety of host machines.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.docker.com/why-docker', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Docker est un logiciel libre permettant de lancer des applications dans des conteneurs logiciels qui s'appuient sur certaines focntionnalités de la machine hôte.
+    Cela permet d'accroître la flexibilité et la portabilité d'exécution d'une application, laquelle va pouvoir tourner de façon fiable et prévisible sur une grande variété de machines hôtes.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.docker.com/why-docker', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Docker es un software gratuito para lanzar aplicaciones en contenedores de software que dependen de ciertas características de la máquina host.
+    Esto aumenta la flexibilidad y portabilidad de ejecutar una aplicación, que podrá ejecutarse de manera confiable y predecible en una amplia variedad de máquinas host.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.docker.com/why-docker', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_docker(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- DOCKER isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_docker ? 'block' : 'none'" [@docker_fadeIn]="docker_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_docker.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_docker(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Docker is free software for launching applications in software containers that rely on certain features of the host machine.
+      This increases the flexibility and portability of running an application, which will be able to run reliably and predictably on a wide variety of host machines.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.docker.com/why-docker', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Docker est un logiciel libre permettant de lancer des applications dans des conteneurs logiciels qui s'appuient sur certaines focntionnalités de la machine hôte.
+      Cela permet d'accroître la flexibilité et la portabilité d'exécution d'une application, laquelle va pouvoir tourner de façon fiable et prévisible sur une grande variété de machines hôtes.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.docker.com/why-docker', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Docker es un software gratuito para lanzar aplicaciones en contenedores de software que dependen de ciertas características de la máquina host.
+      Esto aumenta la flexibilidad y portabilidad de ejecutar una aplicación, que podrá ejecutarse de manera confiable y predecible en una amplia variedad de máquinas host.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.docker.com/why-docker', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- GIT && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_git ? 'block' : 'none'" [@git_fadeIn]="git_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_git.png" alt="git">
+
+  <p class="texts-card" *ngIf="language_english">
+    Git is decentralized version management software. Its main task is to manage the evolution of the content of a tree structure.
+    It is a very powerful tool. Git is also known for its flexibility: support for many non-linear development workflows, efficiency in building projects of different sizes, compatibility with many existing systems and protocols.<br/>
+    GitHub is a web hosting and software development management service, using Git version management software.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://git-scm.com/about', '_blank'); return false;">Official website</a>
+    <br/>
+    <a class="links" onclick="window.open('https://github.com/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Git est un logiciel de gestion de versions décentralisé. Sa principale tâche est de gérer l'evolution du contenu d'une arborescence. C'est un outil très performant.
+    Git est également reconnu pour sa flexibilité : prise en charge de nombreux workflow de développement non-linéaires, efficacité dans l'élaboration de projets de différentes envergures, compatibilité avec de nombreux systèmes et protocoles existants.<br/>
+    GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://git-scm.com/about', '_blank'); return false;">Official website</a>
+    <br/>
+    <a class="links" onclick="window.open('https://github.com/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Git es un software de gestión de versiones descentralizado. Su tarea principal es gestionar la evolución del contenido de una estructura de árbol.
+    Es una herramienta muy poderosa. Git también es conocido por su flexibilidad: soporte para muchos flujos de trabajo de desarrollo no lineales, eficiencia en la construcción de proyectos de diferentes tamaños, compatibilidad con muchos sistemas y protocolos existentes.<br/>
+    GitHub es un servicio de gestión de desarrollo de software y alojamiento web que utiliza el software de gestión de versiones de Git.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://git-scm.com/about', '_blank'); return false;">Official website</a>
+    <br/>
+    <a class="links" onclick="window.open('https://github.com/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_git(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- GIT isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_git ? 'block' : 'none'" [@git_fadeIn]="git_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_git.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_git(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Git is decentralized version management software. Its main task is to manage the evolution of the content of a tree structure.
+      It is a very powerful tool. Git is also known for its flexibility: support for many non-linear development workflows, efficiency in building projects of different sizes, compatibility with many existing systems and protocols.<br/>
+      GitHub is a web hosting and software development management service, using Git version management software.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://git-scm.com/about', '_blank'); return false;">Official website</a>
+      <br/>
+      <a class="links" onclick="window.open('https://github.com/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Git est un logiciel de gestion de versions décentralisé. Sa principale tâche est de gérer l'evolution du contenu d'une arborescence. C'est un outil très performant.
+      Git est également reconnu pour sa flexibilité : prise en charge de nombreux workflow de développement non-linéaires, efficacité dans l'élaboration de projets de différentes envergures, compatibilité avec de nombreux systèmes et protocoles existants.<br/>
+      GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://git-scm.com/about', '_blank'); return false;">Official website</a>
+      <br/>
+      <a class="links" onclick="window.open('https://github.com/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Git es un software de gestión de versiones descentralizado. Su tarea principal es gestionar la evolución del contenido de una estructura de árbol.
+      Es una herramienta muy poderosa. Git también es conocido por su flexibilidad: soporte para muchos flujos de trabajo de desarrollo no lineales, eficiencia en la construcción de proyectos de diferentes tamaños, compatibilidad con muchos sistemas y protocolos existentes.<br/>
+      GitHub es un servicio de gestión de desarrollo de software y alojamiento web que utiliza el software de gestión de versiones de Git.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://git-scm.com/about', '_blank'); return false;">Official website</a>
+      <br/>
+      <a class="links" onclick="window.open('https://github.com/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- BLENDER && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_blender ? 'block' : 'none'" [@blender_fadeIn]="blender_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_blender.png" alt="blender">
+
+  <p class="texts-card" *ngIf="language_english">
+    Blender is free and open-source 3D software. It is used to create animated films, 3D printing, interactive applications, games or even augmented reality.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.blender.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Blender est un logiciel gratuit et open-source de 3D. Il est utilisépour créer des films d'animations, de l'impresssion 3D, des applications intéractives, des jeux ou encore de la réalité augmantée.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.blender.org/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Blender es un software 3D gratuito y de código abierto. Se utiliza para crear películas animadas, impresión 3D, aplicaciones interactivas, juegos o incluso realidad aumentada.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.blender.org/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_blender(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- BLENDER && isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_blender ? 'block' : 'none'" [@blender_fadeIn]="blender_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_blender.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_blender(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Blender is free and open-source 3D software. It is used to create animated films, 3D printing, interactive applications, games or even augmented reality.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.blender.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Blender est un logiciel gratuit et open-source de 3D. Il est utilisépour créer des films d'animations, de l'impresssion 3D, des applications intéractives, des jeux ou encore de la réalité augmantée.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.blender.org/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Blender es un software 3D gratuito y de código abierto. Se utiliza para crear películas animadas, impresión 3D, aplicaciones interactivas, juegos o incluso realidad aumentada.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.blender.org/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- BABYLONJS && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_babylon ? 'block' : 'none'" [@babylon_fadeIn]="babylon_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_babylon.png" alt="babylon">
+
+  <p class="texts-card" *ngIf="language_english">
+    BabylonJS is a 3D engine interpreted natively by a web browser supporting the HTML5 standard.
+    The programming language used is JavaScript, allowing calculations and rendering through the WebGL programming interface.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.babylonjs.com/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    BabylonJS est un moteur 3D interprété nativement par un navigateur web supportant la norme HTML5.
+    Le langage de programmation utilisé est le JavaScript, permettant les calculs et le rendu par l'intermédiaire de l'interface de programmation WebGL.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.babylonjs.com/', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    BabylonJS es un motor 3D interpretado de forma nativa por un navegador web compatible con el estándar HTML5.
+    El lenguaje de programación utilizado es JavaScript, que permite cálculos y renderizado a través de la interfaz de programación WebGL.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.babylonjs.com/', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+</div>
+
+<!-- BABYLONJS isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_babylon ? 'block' : 'none'" [@babylon_fadeIn]="babylon_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_babylon.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_babylon(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      BabylonJS is a 3D engine interpreted natively by a web browser supporting the HTML5 standard.
+      The programming language used is JavaScript, allowing calculations and rendering through the WebGL programming interface.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.babylonjs.com/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      BabylonJS est un moteur 3D interprété nativement par un navigateur web supportant la norme HTML5.
+      Le langage de programmation utilisé est le JavaScript, permettant les calculs et le rendu par l'intermédiaire de l'interface de programmation WebGL.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.babylonjs.com/', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      BabylonJS es un motor 3D interpretado de forma nativa por un navegador web compatible con el estándar HTML5.
+      El lenguaje de programación utilizado es JavaScript, que permite cálculos y renderizado a través de la interfaz de programación WebGL.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.babylonjs.com/', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- PHOTOSHOP && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_photoshop ? 'block' : 'none'" [@photoshop_fadeIn]="photoshop_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_photoshop.png" alt="photoshop">
+
+  <p class="texts-card" *ngIf="language_english">
+    Photoshop is computer-assisted retouching, processing and drawing software. It is mainly used for processing digital photographs, but is also used for the ex nihilo creation of images. He mainly works on raster images.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.photoshop.com/en', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Photoshop est un logiciel de retouche, de traitement et de dessin assisté par ordinateur. Il est principalement utilisé pour le traitement des photographies numériques, mais sert également à la création ex nihilo d’images. Il travaille essentiellement sur images matricielles.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.photoshop.com/en', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Photoshop es un software de retoque, procesamiento y dibujo asistido por computadora. Se utiliza principalmente para procesar fotografías digitales, pero también se utiliza para la creación de imágenes ex nihilo. Trabaja principalmente con imágenes rasterizadas.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.photoshop.com/en', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_photoshop(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- PHOTOSHOP isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_photoshop ? 'block' : 'none'" [@photoshop_fadeIn]="photoshop_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_photoshop.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_photoshop(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Photoshop is computer-assisted retouching, processing and drawing software. It is mainly used for processing digital photographs, but is also used for the ex nihilo creation of images. He mainly works on raster images.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.photoshop.com/en', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Photoshop est un logiciel de retouche, de traitement et de dessin assisté par ordinateur. Il est principalement utilisé pour le traitement des photographies numériques, mais sert également à la création ex nihilo d’images. Il travaille essentiellement sur images matricielles.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.photoshop.com/en', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Photoshop es un software de retoque, procesamiento y dibujo asistido por computadora. Se utiliza principalmente para procesar fotografías digitales, pero también se utiliza para la creación de imágenes ex nihilo. Trabaja principalmente con imágenes rasterizadas.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.photoshop.com/en', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- ILLUSTRATOR && !isMini -->
+
+<div *ngIf="!isMini" class="container-cards" [style.display]="isOpen_illustrator ? 'block' : 'none'" [@illustrator_fadeIn]="illustrator_fadeIn">
+  <img class="title-card" src="../assets/img/titles/title_illustrator.png" alt="illustrator">
+
+  <p class="texts-card" *ngIf="language_english">
+    Adobe Illustrator is vector graphics creation software that offers powerful drawing tools. The advantage of vector images is that they are resolution independent.
+    Suitable for both the creation of paper documents and illustrations for the Internet, it incorporates many options to improve productivity.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.adobe.com/fr/products/illustrator.html', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_french">
+    Adobe Illustrator est un logiciel de création graphique vectorielle offrant des outils de dessin puissants.
+    L'avantages des images vectorielles est qu'elles sont indépendantes de la résolution. Adapté aussi bien à la création de document papier qu'à celle d'illustrations pour Internet, il intègre de nombreuses options propres à améliorer la productivité.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.adobe.com/fr/products/illustrator.html', '_blank'); return false;">Official website</a>
+  </p>
+  <p class="texts-card" *ngIf="language_spanish">
+    Adobe Illustrator es un software de creación de gráficos vectoriales que ofrece potentes herramientas de dibujo.
+    La ventaja de las imágenes vectoriales es que son independientes de la resolución. Adecuado tanto para la creación de documentos en papel como para ilustraciones para Internet, incorpora muchas opciones para mejorar la productividad.
+    <br/>
+    <br/>
+    <a class="links" onclick="window.open('https://www.adobe.com/fr/products/illustrator.html', '_blank'); return false;">Official website</a>
+  </p>
+
+  <div *ngIf="language_english" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+  </div>
+  <div *ngIf="language_french" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+  </div>
+  <div *ngIf="language_spanish" class="spans-language-cards">
+    <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+    <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+  </div>
+
+  <button type="button" class="btn-close btn btn-primary mt-3" (click)="close_illustrator(true)">
+    <span *ngIf="language_english">Close</span>
+    <span *ngIf="language_french">Fermer</span>
+    <span *ngIf="language_spanish">Cerrar</span>
+  </button>
+</div>
+
+<!-- ILLUSTRATOR isMini -->
+
+<div *ngIf="isMini" class="container-cards-mini" [style.display]="isOpen_illustrator ? 'block' : 'none'" [@illustrator_fadeIn]="illustrator_fadeIn">
+  <div class="card-left-mini">
+    <img class="title-card-mini" src="../assets/img/titles/title_illustrator.png" alt="">
+
+    <div *ngIf="language_english" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_french()">french</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">spanish</span>
+    </div>
+    <div *ngIf="language_french" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">anglais</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_spanish()">espagnol</span>
+    </div>
+    <div *ngIf="language_spanish" class="spans-language-cards-mini">
+      <span class="badge badge-pill badge-info mr-2 p-1 pl-2 pr-2" (click)="change_language_english()">inglés</span>
+      <span class="badge badge-pill badge-info p-1 pl-2 pr-2" (click)="change_language_french()">francés</span>
+    </div>
+
+    <button type="button" class="btn-close-mini btn btn-primary mt-3" (click)="close_illustrator(true)">
+      <span *ngIf="language_english">Close</span>
+      <span *ngIf="language_french">Fermer</span>
+      <span *ngIf="language_spanish">Cerrar</span>
+    </button>
+  </div>
+
+  <div class="card-right-mini">
+    <p *ngIf="language_english" class="texts-card-mini">
+      Adobe Illustrator is vector graphics creation software that offers powerful drawing tools. The advantage of vector images is that they are resolution independent.
+      Suitable for both the creation of paper documents and illustrations for the Internet, it incorporates many options to improve productivity.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.adobe.com/fr/products/illustrator.html', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_french" class="texts-card-mini">
+      Adobe Illustrator est un logiciel de création graphique vectorielle offrant des outils de dessin puissants.
+      L'avantages des images vectorielles est qu'elles sont indépendantes de la résolution. Adapté aussi bien à la création de document papier qu'à celle d'illustrations pour Internet, il intègre de nombreuses options propres à améliorer la productivité.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.adobe.com/fr/products/illustrator.html', '_blank'); return false;">Official website</a>
+    </p>
+    <p *ngIf="language_spanish" class="texts-card-mini">
+      Adobe Illustrator es un software de creación de gráficos vectoriales que ofrece potentes herramientas de dibujo.
+      La ventaja de las imágenes vectoriales es que son independientes de la resolución. Adecuado tanto para la creación de documentos en papel como para ilustraciones para Internet, incorpora muchas opciones para mejorar la productividad.
+      <br/>
+      <br/>
+      <a class="links" onclick="window.open('https://www.adobe.com/fr/products/illustrator.html', '_blank'); return false;">Official website</a>
+    </p>
+  </div>
+</div>
+
+<!-- CACHE MOBILE DEVICE -->
+
+<div class="cacheMobileDevice-container" [style.display]="isVisible_cacheMobileDevice ? 'block' : 'none'" [@isVisible_cacheMobileDevice]="isVisible_cacheMobileDevice">
+</div>
