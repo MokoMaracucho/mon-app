@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { LaboratoryComponent } from './laboratory/laboratory.component';
-import { DevelopmentComponent } from './development/development.component';
+import { Page001Component } from './page-001/page-001.component';
+import { Page002Component } from './page-002/page-002.component';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: 'laboratory', component: LaboratoryComponent },
-      { path: '', redirectTo: 'laboratory', pathMatch: 'full' },
-      { path: 'laboratory/:isCV', component: LaboratoryComponent },
-      { path: 'development', component: DevelopmentComponent },
-      { path: 'development/:isCV', component: DevelopmentComponent},
-      { path: '**', redirectTo: 'laboratory', pathMatch: 'full' }
+      { path: 'page-001', component: Page001Component },
+      { path: '', redirectTo: 'page-001', pathMatch: 'full' },
+      { path: 'page-002', component: Page002Component },
+      { path: '**', redirectTo: 'page-001', pathMatch: 'full' }
     ])
   ],
   exports: [

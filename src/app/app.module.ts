@@ -9,17 +9,17 @@ import 'pepjs';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LaboratoryComponent } from './laboratory/laboratory.component';
-import { LaboratoryModule } from './laboratory/laboratory.module';
-import { DevelopmentComponent } from './development/development.component';
-import { DevelopmentModule } from './development/development.module';
+import { Page001Component } from './page-001/page-001.component';
+import { Page001Module } from './page-001/page-001.module';
+import { Page002Component } from './page-002/page-002.component';
+import { Page002Module } from './page-002/page-002.module';
 import { WindowRefService } from './shared/services/window-ref.service';
 
 @NgModule({
     declarations: [
       AppComponent,
-      LaboratoryComponent,
-      DevelopmentComponent
+      Page001Component,
+      Page002Component
     ],
     imports: [
         BrowserModule,
@@ -27,8 +27,8 @@ import { WindowRefService } from './shared/services/window-ref.service';
         ReactiveFormsModule,
         HttpClientModule,
         NgbModule,
-        LaboratoryModule,
-        DevelopmentModule,
+        Page001Module,
+        Page002Module,
         AppRoutingModule
     ],
     providers: [
