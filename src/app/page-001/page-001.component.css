@@ -1,6 +1,6 @@
 /* CANVAS */
 
-#rendererCanvas_laboratory {
+#rendererCanvas_page001 {
   z-index: 0;
   position: absolute;
   width: 100%;
@@ -8,4 +8,5 @@
   margin: 0;
   touch-action: none;
   outline: none;
+  background-color: red;
 }

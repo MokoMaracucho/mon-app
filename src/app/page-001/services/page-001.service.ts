@@ -64,6 +64,11 @@ export class Page001Service {
     this.directional_light.intensity = 1;
     this.directional_light.diffuse = new BABYLON.Color3(0.4, 0, 0.2);
     this.directional_light.specular = new BABYLON.Color3(0, 0, 0);
+
+    // TEST
+
+    BABYLON.SceneLoader.ImportMeshAsync("test", "../../assets/glb/page-001/", "test.glb").then((result) => {
+    });
 }
 
   // ANIMATE
