@@ -21,6 +21,13 @@ export class Page001Service {
 
   private light: BABYLON.Light;
 
+  private axis_X;
+  private axis_X_MATERIAL: BABYLON.StandardMaterial;
+  private axis_Y;
+  private axis_Y_MATERIAL: BABYLON.StandardMaterial;
+  private axis_Z;
+  private axis_Z_MATERIAL: BABYLON.StandardMaterial;
+
   public constructor(
     private ngZone: NgZone,
     private windowRef: WindowRefService,
@@ -44,7 +51,27 @@ export class Page001Service {
 
     BABYLON.SceneLoader.ImportMeshAsync("test", "../../assets/glb/page-001/", "test.glb", this.scene).then((result) => {
     });
-}
+
+    //  AXIS
+
+    this.axis_X = BABYLON.MeshBuilder.CreateBox("axis_X", {height: 0.2, width: 0.2, depth: 0.2});
+    this.axis_X.position = new BABYLON.Vector3(5, 0, 0);
+    this.axis_X_MATERIAL = new BABYLON.StandardMaterial("axis_X_MATERIAL", this.scene);
+    this.axis_X_MATERIAL.diffuseColor = new BABYLON.Color3(1, 0, 0);
+    this.axis_X.material = this.axis_X_MATERIAL;
+
+    this.axis_Y = BABYLON.MeshBuilder.CreateBox("axis_Y", {height: 0.2, width: 0.2, depth: 0.2});
+    this.axis_Y.position = new BABYLON.Vector3(0, 0, 5);
+    this.axis_Y_MATERIAL = new BABYLON.StandardMaterial("axis_Y_MATERIAL", this.scene);
+    this.axis_Y_MATERIAL.diffuseColor = new BABYLON.Color3(0, 1, 0);
+    this.axis_Y.material = this.axis_Y_MATERIAL;
+
+    this.axis_Z = BABYLON.MeshBuilder.CreateBox("axis_Z", {height: 0.2, width: 0.2, depth: 0.2});
+    this.axis_Z.position = new BABYLON.Vector3(0, 5, 0);
+    this.axis_Z_MATERIAL = new BABYLON.StandardMaterial("axis_Z_MATERIAL", this.scene);
+    this.axis_Z_MATERIAL.diffuseColor = new BABYLON.Color3(0, 0, 1);
+    this.axis_Z.material = this.axis_Z_MATERIAL;
+  }
 
   // ANIMATE
 
